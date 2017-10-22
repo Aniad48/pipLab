@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="lab2_dip:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="lab2_dip-1.0.war">
+    <output-path>$PROJECT_DIR$/out/artifacts/lab2_dip_war</output-path>
+    <root id="archive" name="lab2_dip_war.war">
       <element id="artifact" artifact-name="lab2_dip:war exploded" />
     </root>
   </artifact>

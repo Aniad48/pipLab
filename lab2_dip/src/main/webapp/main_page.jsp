@@ -13,19 +13,19 @@
     <link href="css/style_lab1.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<body>
 <table>
     <tr class="header">
         <td>Архипов Глеб</td>
-        <td>P3102 Вариант: 500</td>
+        <td>P3102 Вариант: 593</td>
     </tr>
     <tr class="header">
-        <td>Голованев Яков</td>
-        <td>P3102 Вариант: 500</td>
+        <td>Михаил Филатов</td>
+        <td>P3102 Вариант: 593</td>
     </tr>
+    <form id="coordinates" action="/lab2_dip_war/control" method="GET">
     <tr>
-        <td><form id="coordinates" action="/some_servlet" method="POST">Y: <input type="text" name="Y" value="0.0"></form></td>
-        <td rowspan="4" id="imgCenter"><img  src="images\graph.PNG" alt="Тут должен быть график"></td>
+        <td>Y: <input type="text" name="Y" value="0.0"></td>
+        <td rowspan="4" id="imgCenter"><img  src="images\graph_lab2.PNG" alt="Тут должен быть график"></td>
     </tr>
     <tr>
         <td>
@@ -34,29 +34,45 @@
                     <td id="X" colspan="3">X:</td>
                 </tr>
                 <tr>
+                    <td><input type="radio" name="X" value="-3" form="coordinates">-3</td>
                     <td><input type="radio" name="X" value="-2" form="coordinates">-2</td>
-                    <td><input type="radio" name="X" value="-1.5" form="coordinates">-1.5</td>
                     <td><input type="radio" name="X" value="-1" form="coordinates">-1</td>
                 </tr>
                 <tr>
-                    <td><input type="radio" name="X" value="-0.5" form="coordinates">-0.5</td>
                     <td><input type="radio" name="X" value="0" form="coordinates">0</td>
-                    <td><input type="radio" name="X" value="0.5" form="coordinates">0.5</td>
+                    <td><input type="radio" name="X" value="1" form="coordinates">1</td>
+                    <td><input type="radio" name="X" value="2" form="coordinates">2</td>
                 </tr>
                 <tr>
-                    <td><input type="radio" name="X" value="1" form="coordinates">1</td>
-                    <td><input type="radio" name="X" value="1.5" form="coordinates">1.5</td>
-                    <td><input type="radio" name="X" value="2" form="coordinates">2</td>
+                    <td><input type="radio" name="X" value="3" form="coordinates">3</td>
+                    <td><input type="radio" name="X" value="4" form="coordinates">4</td>
+                    <td><input type="radio" name="X" value="5" form="coordinates">5</td>
                 </tr>
             </table>
         </td>
     </tr>
     <tr>
-        <td>R: <input type="text" name="R" value="0.0" form="coordinates"></td>
+        <td>
+            <table>
+                <tr>
+                 <td id="R" colspan="3">R:</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="R" value="1" form="coordinates">1</td>
+                    <td><input type="checkbox" name="R" value="2" form="coordinates">2</td>
+                    <td><input type="checkbox" name="R" value="3" form="coordinates">3</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="R" value="4" form="coordinates">4</td>
+                    <td><input type="checkbox" name="R" value="5" form="coordinates">5</td>
+                </tr>
+            </table>
+        </td>
     </tr>
     <tr>
         <td><button form="coordinates" type="submit">Давайте проверим</button></td>
     </tr>
+    </form>
 </table>
 </body>
 </html>
