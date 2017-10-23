@@ -16,10 +16,11 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Try>  listOfTries= new ArrayList<Try>();
+        List<Try>  listOfTries;
+        response.setCharacterEncoding("UTF-8");
         int r = Integer.parseInt(request.getParameter("R"));
         int x = Integer.parseInt(request.getParameter("X"));
-        int y = Integer.parseInt(request.getParameter("Y"));
+        double y = Double.parseDouble(request.getParameter("Y"));
         String result = new String();
 
         if (x<=0 & y<=0 & x>=-r & y>=-r/2 ){
@@ -34,12 +35,10 @@ public class AreaCheckServlet extends HttpServlet {
         else result="Промахнулись";
 
         HttpSession se = request.getSession();
-        if (se.isNew()){
-            listOfTries.clear();
-        }
-        else {
-            listOfTries = (ArrayList<Try>)se.getAttribute("listOfTries");
-        }
+
+        listOfTries = (ArrayList<Try>)se.getAttribute("listOfTries");
+        if (listOfTries==null) listOfTries=new ArrayList<Try>();
+
         Try currentTry = new Try(x,y,r,result);
         listOfTries.add(currentTry);
         se.setAttribute("listOfTries", listOfTries);
@@ -68,13 +67,8 @@ public class AreaCheckServlet extends HttpServlet {
             out.println("</tr>");
         }
 
-        out.println("<tr>");
-        out.println("<td>"+y+"</td>");
-        out.println("<td>"+x+"</td>");
-        out.println("<td>"+r+"</td>");
-        out.println("<td>"+result+"</td>");
-		out.println("</tr>");
 		out.println("</table>");
+        out.print("<a href=\"/lab2_dip_war/main\">" +"Вернуться к форме" + "</a>");
         out.println("</body>");
         out.println("</html>");
     }
