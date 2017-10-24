@@ -14,19 +14,7 @@ public class ControllerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getParameter("R") == null || request.getParameter("Y") == null || request.getParameter("X") == null ){
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>" + "There is lack of parameters" + "</title>");
-            out.println("</head>");
-            out.println("<body bgcolor='white'>");
-            out.println("<h3>" + "There is lack of parameters" + "</h3>");
-            out.println("<p>");
-            out.println("You should fill all forms");
-            out.println("</p>");
-            out.println("</body>");
-            out.println("</html>");
+            request.getRequestDispatcher("/main").forward(request, response);
         }
         else if (!isParameterInteger(request.getParameter("R")) || !isParameterInteger(request.getParameter("X")) || !isParameterDouble(request.getParameter("Y")) ){
             response.setContentType("text/html");

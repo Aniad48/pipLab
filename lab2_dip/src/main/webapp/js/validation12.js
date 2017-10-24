@@ -19,10 +19,10 @@ function validate(form) {
         showError(elems.Y.parentNode, ' Выходит за границы', 1, 'span');
     } else if (elems.X.value=='') {
         document.getElementById("X").colSpan = "1";
-        showError(document.getElementById("X").parentNode, ' Выбирите!', 2, 'td');
+        showError(document.getElementById("X").parentNode, ' Выберите!', 2, 'td');
     }else if (t==0){
         document.getElementById("R").colSpan = "1";
-        showError(document.getElementById("R").parentNode, ' Выбирите!', 2, 'td');
+        showError(document.getElementById("R").parentNode, ' Выберите!', 2, 'td');
     }
     else form.submit();
 }
